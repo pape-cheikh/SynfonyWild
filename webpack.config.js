@@ -15,34 +15,22 @@ Encore
   // Activer les sourcemaps
   .enableSourceMaps(!Encore.isProduction())
   // Activer le support de Babel
-  .configureBabelPresetEnv((config) => {
+  .configureBabel((config) => {
     config.presets.push("@babel/preset-env");
   })
   // Configuration des fichiers de sortie
   .enableSingleRuntimeChunk()
-  // Autres configurations selon vos besoins
+  // Activer PostCSS
   .enablePostCssLoader()
   .configureImageRule({
-    test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
-    loader: "url-loader",
-    options: {
-      limit: 8192, // Convertir les images < 8kb en DataURL
-      name: "[path][name].[ext]",
-      context: "assets",
-      outputPath: "images/",
-      publicPath: "../images",
-    },
+    type: "asset",
+    maxSize: 8192, // Convertir les images < 8kb en DataURL
+    filename: "images/[name].[hash:8][ext]", // Nom de fichier et emplacement
   })
-  .configureFontLoader({
-    test: /\.(woff|woff2|eot|ttf|otf)$/,
-    loader: "url-loader",
-    options: {
-      limit: 8192, // Convertir les fonts < 8kb en DataURL
-      name: "[path][name].[ext]",
-      context: "assets",
-      outputPath: "fonts/",
-      publicPath: "../fonts",
-    },
+  .configureFontRule({
+    type: "asset",
+    maxSize: 8192, // Convertir les fonts < 8kb en DataURL
+    filename: "fonts/[name].[hash:8][ext]", // Nom de fichier et emplacement
   });
 
 module.exports = Encore.getWebpackConfig();

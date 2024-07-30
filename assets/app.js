@@ -1,6 +1,7 @@
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./bootstrap.js";
+import "./controllers";
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -9,4 +10,5 @@ import "./bootstrap.js";
  */
 import "./styles/app.css";
 
-console.log("This log comes from assets/app.js - welcome to AssetMapper! 🎉");
+console.log("Hello Webpack Encore !");
+//console.log("This log comes from assets/app.js - welcome to AssetMapper! 🎉");

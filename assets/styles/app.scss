@@ -1,0 +1,21 @@
+// assets/styles/app.scss
+
+// Importer Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Personnaliser les variables Bootstrap
+$primary: #007bff; // Exemple de couleur primaire
+$secondary: #6c757d; // Exemple de couleur secondaire
+
+// Importer les styles Bootstrap après avoir personnalisé les variables
+@import "~bootstrap/scss/bootstrap";
+
+// Vous pouvez ajouter d'autres styles personnalisés ci-dessous
+body {
+  font-family: Arial, sans-serif;
+}
+
+// Exemple de style personnalisé
+.navbar-light {
+  background-color: #f8f9fa;
+}

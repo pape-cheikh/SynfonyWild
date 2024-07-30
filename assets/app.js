@@ -1,7 +1,12 @@
 import "bootstrap";
+import { Turbo } from "@hotwired/turbo";
+window.Turbo = Turbo;
+
+import "../styles/app.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./bootstrap.js";
 import "./controllers";
+import "./styles/app.scss";
 /*
  * Welcome to your app's main JavaScript file!
  *
